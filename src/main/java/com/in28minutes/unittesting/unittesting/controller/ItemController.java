@@ -30,6 +30,9 @@ public class ItemController {
 	@GetMapping("/all-items-from-database")
 	public List<Item> retrieveAllItems() {
 		return businessService.retrieveAllItems();
+
+
+
 	}
 	
 }
