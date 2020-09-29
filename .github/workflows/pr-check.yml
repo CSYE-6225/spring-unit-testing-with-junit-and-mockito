@@ -1,0 +1,23 @@
+---
+name: pr-check
+
+on:
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  build-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Setup Maven
+        uses: stCarolas/setup-maven@v1
+
+      - name: Creating a maven build
+        run:  mvn clean package
+
+      - name: Running Test cases
+        run:  mvn test
